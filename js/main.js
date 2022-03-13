@@ -32,16 +32,68 @@ modalClose.forEach((mc) =>{
 } )
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
-
+let mixerPortfolio = mixitup('.work__container', {
+    selectors: {
+        target: '.work__card'
+    },
+    animation: {
+        duration: 300
+    }
+});
 
 /* Link active work */ 
 
+const linkWork = document.querySelectorAll('.work__item')
+
+function activeWork(){
+    linkWork.forEach(L=> L.classList.remove('active-work'))
+    this.classList.add('active-work')
+}
+
+linkWork.forEach(L=> L.addEventListener('click', activeWork))
 
 /*=============== SWIPER TESTIMONIAL ===============*/
-
+let swiperTestimonial = new Swiper(".testimonial__container", {
+    spaceBetween: 24,
+    loop: true,
+    grapCursor: true,
+    pagination: { 
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+        576: {
+          slidesPerView: 2,
+          
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 48,
+        },
+        
+    },
+      
+  });
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
 
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== LIGHT DARK THEME ===============*/ 
 
