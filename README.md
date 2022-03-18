@@ -1,6 +1,9 @@
 # responsive-portfolio-website
-![alt text](https://r.resimlink.com/xig2vrjcbmy.png)
 
+<p align="center">
+  <img src="https://r.resimlink.com/xig2vrjcbmy.png" width="350" title="hover text">
+  <img src="https://r.resimlink.com/xig2vrjcbmy.png" width="350" alt="accessibility text">
+</p>
 ## Used Technologies
 
 * Html
