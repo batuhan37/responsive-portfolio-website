@@ -172,9 +172,8 @@ color: var(--text-color);
 .light-theme .skills__content,
 .light-theme .testimonial__card,
 .light-theme .contact__card,
-.light-theme .footer__title,
-.light-theme .footer__link,
-.light-theme .footer__copy{
+.light-theme .footer__link
+{
     box-shadow:  0 2px 16px hsla(var(--second-hue), 48%, 8%, .1);
 }
 
